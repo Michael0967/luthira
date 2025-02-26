@@ -6,7 +6,5 @@ test.describe('open and close sidecart', () => {
     await page.goto('/')
   })
 
-  test('test', async ({ page }) => {
-    
-  })
+  test('test', async ({ page }) => {})
 })

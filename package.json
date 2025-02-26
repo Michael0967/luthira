@@ -2,11 +2,15 @@
   "name": "luthira",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "author": "Michael Rojas",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.50.1",
-    "@types/node": "^22.13.5"
+    "@types/node": "^22.13.5",
+    "prettier": "^3.5.2"
   }
 }
