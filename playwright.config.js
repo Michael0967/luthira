@@ -1,4 +1,10 @@
 import { defineConfig, devices } from '@playwright/test'
+import dotenv from 'dotenv'
+
+// Load variables from the .env only if they are not defined in the environment
+if (!process.env.PASSWORD) {
+  dotenv.config()
+}
 
 export default defineConfig({
   testDir: './tests',
@@ -8,7 +14,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://printemps-a-paris.myshopify.com/password',
+    baseURL: process.env.BASE_URL || 'https://default-url.com',
     trace: 'on-first-retry',
   },
   projects: [

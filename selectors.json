@@ -1,1 +1,6 @@
-{}
+{
+  "passwordPage": {
+    "input": "#password",
+    "enter": "button:text('Enter')"
+  }
+}

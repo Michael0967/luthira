@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "test:ui": "npx playwright test -g 'example' --ui",
+    "test": "npx playwright test    "
   },
   "author": "Michael Rojas",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.5",
+    "dotenv": "^16.4.7",
     "prettier": "^3.5.2"
   }
 }
