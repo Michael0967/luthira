@@ -2,5 +2,12 @@
   "passwordPage": {
     "input": "#password",
     "enter": "button:text('Enter')"
+  },
+
+  "cart": {
+    "section": ".shopify-section.side-cart",
+    "open": "[data-cy='cart-icon']",
+    "close": "[data-cy='close-sidecart']",
+    "overlay": ".overlay"
   }
 }

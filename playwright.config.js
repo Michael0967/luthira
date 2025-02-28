@@ -1,10 +1,15 @@
 import { defineConfig, devices } from '@playwright/test'
 import dotenv from 'dotenv'
+import fs from 'fs'
 
-// Load variables from the .env only if they are not defined in the environment
-if (!process.env.PASSWORD) {
-  dotenv.config()
-}
+// Load environment variables
+dotenv.config()
+
+// Define session path
+const SESSION_FILE = process.env.SESSION_FILE || 'session.json'
+
+// Check if the session exists before assigning it
+const storageState = fs.existsSync(SESSION_FILE) ? SESSION_FILE : undefined
 
 export default defineConfig({
   testDir: './tests',
@@ -14,8 +19,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: process.env.BASE_URL || 'https://default-url.com',
+    baseURL: process.env.BASE_URL || 'https://printemps-a-paris.myshopify.com/',
     trace: 'on-first-retry',
+    storageState,
   },
   projects: [
     {
